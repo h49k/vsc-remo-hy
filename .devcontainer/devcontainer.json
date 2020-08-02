@@ -1,5 +1,5 @@
 {
-	"name": "Hy",
+	"name": "fsharp",
 	"dockerFile": "Dockerfile",
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
@@ -10,6 +10,9 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
+		// "georgewfraser.fsharp-language-server",
+		"ms-dotnettools.csharp",
+		"ionide.ionide-fsharp"
 		// "xuqinghan.vscode-hy"
 		// (Optional) Displays the current CPU stats, memory/disk consumption, clock freq. etc. of the container host in the VS Code status bar.
 		// "mutantdino.resourcemonitor"
@@ -19,7 +22,7 @@
 	"forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "rustc --version",
+	"postCreateCommand": "dotnet --version",
 
 	// Comment out to run as root instead
 	"remoteUser": "vscode"
